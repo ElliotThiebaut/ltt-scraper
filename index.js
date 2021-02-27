@@ -23,7 +23,7 @@ const runCheckStock = () => {
             let oldUrl = "";
             let currentStockStatus = false;
 
-            axios.get('http://localhost:5000/lttstock')
+            axios.get('https://api.risitas.fun/lttstock')
                 .then(response => {
                     oldStockStatus = response.data.hasStock;
                     oldUrl = response.data.url;
@@ -44,7 +44,7 @@ const runCheckStock = () => {
             }
 
             if ((oldUrl != url) || (currentStockStatus != oldStockStatus)) {
-                axios.put('http://localhost:5000/lttstock', {
+                axios.put('https://api.risitas.fun/lttstock', {
                     'stockStatus': currentStockStatus,
                     'name': productName,
                     'url': url
