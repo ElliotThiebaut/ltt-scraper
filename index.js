@@ -57,5 +57,6 @@ const runCheckStock = () => {
         });
 }
 
+runCheckStock();
 setInterval(runCheckStock, 1800000);
 
