@@ -6,7 +6,10 @@ const url = 'https://www.lttstore.com/products/deskpad';
 
 const runCheckStock = () => {
     puppeteer
-        .launch()
+        .launch(
+            //Only when deployed on server
+            {executablePath: '/usr/bin/chromium-browser'}
+        )
         .then((browser) => {
             return browser.newPage();
         })
